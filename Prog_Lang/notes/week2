@@ -1,0 +1,141 @@
+8/28
+-------------
+int in c can store in different bits on different machines
+    -some machines in 32bit, others in 64bit
+CPU does 3 things
+    -Fetch (an instruction)
+    -decode
+    -execute
+    IP = instruction pointer register
+
+Machine Language and the First Stored Programs
+    -John von Neumann
+        *proposed that computers should be permanently hardwired with a small set of general purpose operations
+            >would allow the operator to input a series of binary codes to organize the basic hardware operations to solve more specific problems
+            >operators could flip switches to enter these codes, called machine language, into memory
+            >Fetch
+                -source of GOTO's power
+            >Hence
+                -Von Neumann architecture
+FORTRAN and Algebraic Notation
+    -FORTRAN: FORmula
+        *developed
+The ALGOL Family: Structured abstractions and machine independence
+    -ALGOL: ALGOrithmic Language released in 1960
+        *provided standard notation for computer scientists to publish algorithms in journals
+        *included structured control statements for sequencing, loops, and selection
+        *supported different numeric types
+        *introduced the array structure
+        *supported procedures, including recursive procedures
+    -Achieved machine independence with the requirement for an ALGOL compiler with each type of hardware
+    -Compiler : translates programming language statements into machine code
+    -ALGOL was the first language to receive a formal specification or definition
+        *included a grammar that defined its features for both programmers and for compiler writers
+Assembly Language. Symbolic Codes, and Software Tools
+    -
+
+Computation without the Neumann architecture
+    -progress in language abstraction and hardware performance ran into separate roadblocks
+        *hardware began to reach the limits of improvements predicted by Moore's law, leading to the multi-core approach
+            >Moore's law - 
+        *large programs were difficult to debug and correct
+        *single-processor model of computation cannot be easily mapped into new architecture of multiple CPUs existing in parallel
+    -Solution: languages need not be based on a particular model of hardware but need only to support models of computation suitable for styles of problem solving
+    -Lambda calculus
+        *computational model developed by mathematician Alonzo Church
+        *based on the theory of recursive functions
+    -Lisp
+        *
+Abstractions in Programming Languages
+    -two types of programming language abstractions
+        1. data abstraction
+            *simplify the beahavior and attributes of data for humans
+            *examples: numbers, character strings, search trees
+        2. control abstraction
+            *simplify properties of the transfer of control
+            *examples: loops, conditional statements, procedure calls
+    -Data: Basic Abstractions
+        *standard mathematical operations, such as addition and multiplication
+    -Data: Structured Abstractions
+        *Data structure
+            >collects related data values into a single unit
+            >hides component parts but can be constructed from
+    -Data: Unit Abstractions
+        *Information hiding
+            >defining new data types that hide information
+        *Unit Abstraction
+            >often associated with the concept of an abstract data type
+            >set of data values and the operations on those values
+            >separates the interface from the implementation
+                -interface
+                    *set of operations available to the user
+                -implementation
+                    *internal representation of data values and operations
+    -Control: Basic Abstractions
+        *basic control abstractions
+            >statements that combine a few machine
+        *syntactic sugar
+            >mechanism that allows you to replace complex notation with a simpler, shorthand notation
+    -Control: Structured Abstractions
+        *Structured control abstractions
+            >divide a program into groups of instructions nested within tests that govern their execution
+            >help to express the logic of primary control structures of sequencing, selection, and iteration
+        *Branch instructions
+            >instructions that support selection and iteration to memory locations other than the next one
+        *Procedure
+            >groups a sequence of actions into a single action that can be called or invoked from other points in the program
+                -procedure declaration
+                -invocation
+                -parameters: values that can 
+                -arguments: values supplied by the caller for the parameters
+        *Runtime enviornment
+            >system implementation of the program
+            >stores information about the condition of the program and the way procedures operate
+        *Functions
+            >closely related to a procedure
+            >returns a value or result to its caller
+            >can be written to correspond more closely to mathematical abstractions
+        *Recursion
+            >a mechanism that firther exploits the abstraction mechanism
+
+8/30
+-------------------
+    -Control: Unit Abstractions
+        *
+
+Computatinoal Paradigms
+    -Object oriented paradigm
+        *reusable code that operates in a war to mimic behaviors of real world objects
+
+Language Definition
+    -formal language definition provides benefits:
+        *helps to allow
+    
+    -Language syntax
+        *similar to the grammer of a natural language
+            >grammar: formal definition of the languages syntax
+        *lexical structure
+            >structure of the languages words
+            >similar to spelling in natural languages
+        *tokens
+            >the languages words
+            >includes keywords, identifiers, symbols for operations, special punctuation symbols, etc
+    -Language Translation
+        *translator
+            >a program that accepts
+            >interpreter
+                -
+            >compiler
+                -
+        *interpretation vs translation
+
+
+Chapter 2:
+-----------
+Historical Overview
+    -in the early days, machines were extremely slow and memory was scarce
+        *program speed and memory usage were prime concerns
+    -efficiency of execution
+        *
+    -Writability
+        *

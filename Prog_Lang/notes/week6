@@ -1,0 +1,48 @@
+9/25
+-------------
+Elements of scheme
+    -evaluation rule also implies that the value of a function is clearly distinguished from a call to the function 
+        *function is represented by the first expression in an application
+        *function call is surrounded by parentheses
+    -evaluation rule represents applucative order evaluation
+        *subexpressions are evaluated first
+        *a corresponding expression tree is evaluated from leaves to root
+    -lambda special form: creates a function with the specified formal parameters and a body of code to be evaluated when the function is applied
+            >(lambda (radius) (* 3.14 (* radius radius)))
+        *can apply the function to an argument by wrapping it and the argument in another set of parentheses
+            >((lambda (radius) (* 3.14 (* radius radius))) 10)
+        *can bind to a lambda with a let:
+            >(let ((circlearea (lambda(radius) (*3.14 (*radius radius)))))(circlearea 10))
+        *let cannot be used to define recursive functions since let bindings cannot refer to themselves or each other
+        *letrec special form
+            >works like a let but allows arbitrary recursive references within the binding list
+            >(letrec((factorial (lambda (n) (if (= n 0) 1 (* n (factorial (- n 1)))))))(factorial 10))
+
+Higher Order Functions
+    -functions that take other functions as parameters and functions that return functions as values
+            >ex: (define make-double (lambda (f) (lambda (x) (f x x))))
+        *can now create functions using:
+            >(define square (make-double *))        //make double bound to the variable square
+            >(define double (make-double +))
+    -Currying
+        *a process in which a function of multiple parameters is viewed as a higher order function of a single parameter that returns a function of the remaining parameters
+            - a function to which this process is applied is said to be curried
+        *can use a tuple to get and "uncurried" version of a function or two separate parameters to get a curried version
+Tail and Non-Tail Recursion
+    -because of runtime overhead for procedure calls, loops are always preferable to recursion in imperative languages
+    -tail recursive: 
+        *when the recursive steps are the last steps in any function
+        *scheme compiler translates this to code that executtes as a loop with n additional overhead for function calls other than the top level call
+        *eliminates the performance hit of recursion
+            >non-tail recursive
+                (define factorial
+                    (lambda (n)
+                        (if (= n 1) 
+                            1
+                            (* n (factorial (- n 1))))))
+            >tail recursive
+                (define factorial
+                    (lambda (n result) 
+                        (if (= n 1)
+                            result
+                            (factorial (- n 1) (* n result)))))

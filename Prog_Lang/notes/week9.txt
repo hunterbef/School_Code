@@ -1,0 +1,65 @@
+Chapter 6
+----------------
+Ambiguity, Associativity, and Precedence
+    -EBNFs and Syntax diagrams
+        *Extended Backus-Naur form
+            >introduces new notation to handle common issues
+            >use curly braces to indicate 0 or more repetitions
+                -assumes that any operator involved in a curly bracket repitition is left-associative
+
+Parsing Techniques and tools
+    -goal of parsing is to get the parse tree
+    -a grammar written in BNF, EBNF, or syntax diagrams describes the strings of tokens that are syntactically legal
+        *it also describes how a parser must act to parse correctly
+    -recognizer
+        *accepts or rejects strings based on whether they are legal strings in the language
+    -bottom up parser
+        *constructs derivations and paprse trees from the leaves to the roots
+        *matches an input with right side of a rule and redices it to the nonterminal on the left
+        *also called shift-reduce parsers
+            >they shift tokens onto a stack prior to reducing strings to nonterminals
+        *preferred method for parser generators
+    -top down parser
+        *
+    -parser generator
+        *program
+    -recursive descent parsing  
+        *turns nonterminals into a group of mutually recursive procedures based on the right hand sides of the BNFs
+            >tokens are matched directly with input tokens as constructed by a scanner
+            >nonterminals are interpreted as calls to the procedures corresponding to the nonterminals
+    -left recursive rules may present problems
+        *may cause infinite recursive loop
+        *no way to decide which of the two choices to take until a + is seen
+    -the EBNF description expresses the recursion as a loop
+            expr -> term {+term}
+        *thus, curly brackets in EBNF represent left recursion removal by the use of a loop
+    -Single symbol lookahead
+        *using a single token to direct a parse
+    -predictive parser
+        *a parser that commits itself to a particular action based only on the lookahead
+    -grammar must satisfy certain conditions to make this decision making process work
+        *parser must be able to distinguish between choices in a rule
+        *for an optional part, no token beginning the optional part can also come after the optional part
+    -YACC
+        *a widely used parser generator 
+            >freeware version is called Bison
+            >generates a C program that uses a bottom up algorithm to parse the grammar
+        *YACC generates a procedure yyparse from the grammar, which must be called from a main procedure
+        *YACC assumes that tokens are recognized by a scanner procedure called yylex, which must be provided
+
+Lexics vs Syntax vs Semantics
+    -some rules are context-sensitive and cannot be written as context free rules
+    -examples
+        *declaration before use for variables
+        *no redeclaration of identifiers within a procedure
+    -these are semantic 
+
+
+
+Chapter 7 : Semantics
+---------------------
+Attributes, Binding, and Semantic Functions
+    -Names (identifiers)
+        *a fundamental abstraction mechanism used to denote language entities or constructs
+    -Fundamental step in descriing semantics is to describe naming conventions for identifiers
+    -most languages also unclude concepts

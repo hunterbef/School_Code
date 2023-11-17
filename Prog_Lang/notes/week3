@@ -1,0 +1,59 @@
+9/6
+--------------
+C++: An Object-Oriented Extension of C
+    -created by Bjarne Stroustrup at Bell Labs in 1979-80
+    -he chose to base his new language on C because of its:
+        *flexibiility
+        *efficiency
+        *availability
+            >how many people are already using it
+        *portability
+            >how many devices are capable of running it
+    -he chose to add the class construct from the Simula67 language
+    -design goals for C++
+        *support for good program develoment in the form of classes, inheritance, and strong type-checking
+        *efficient execution on the order of C or BCPL
+        *highly portable, easily implemented, and easily interfaced with other tools
+    -First Implementations
+        *first implementation in 1979-80 in the form of a preprocessor called Cpre, which generated ordinary C code
+        *1985:
+            >replaced the preprocessor with a more sophisticated compiler
+                -compiler was called Cfront
+                -language was now called C++
+                -added dynamic binding of methods, type, parameters, and general overloading
+        *Design goals for C++:
+            >maintain C compatibility as far as practical
+            >should undergo incremental development based firmly in practical experience
+            >any added feature must not degrade runtime efficiency or affect existing programs negatively
+            >should not force any one style of programming
+            >should maintain and strengthen its type checking
+            >should be learnable in stages
+            >should maintain compatibility with other systems and languages
+    -Standardization
+        *because C++ was rapidy growing in use, was continuing to evolve, and had several different implementations, standardization was a problem
+        *1989: Stroustrup produced a reference manual
+        *1990-91: ANSI and ISO standards comittees accepted the manual as the base document for the standardization effort
+        *1994: addition of a standard library of containers and algorithms
+        *1998: proposed standards became the actual ANSI/ISO standard
+    -Retrospective
+        *why was C++ a success?
+            >introduced just as interest in object oriented techniques was exploding
+            >straightforward syntax, not tied to any operating enviornment
+            >its semantics incurred no performance penalty
+            >its flexibility, hybrid nature, and its designers willingness to extend its features were popular
+        *detractors consider C++ to have too many features and too many ways of doing similar things
+
+Python: A General Purpose Scripting Language
+    -Guido can Rossum developeda translator and virtual machine for a scripting language called python in 1986
+    -one of his goals was to allow python to act as a bridge between system languages (C and Shell) or scripting languages
+    -included a dictionary, a set of key/vakue pairs implemented via hashing, that was useful for representing collections of objects organized by content or associated instead of by position
+    -Design Goals:
+        *simple regular syntax
+        *set of powerful data types and libraries
+        *easy to use by novices
+    -Interactivity and Portability
+        *python was designed for users who do not typically write large systems but instead write short programs
+            >development cycle procides immediate feedback with minimal overhead for I/O operations
+        *python can be run in two modes
+            >expressions or statements can be run in a python shell for maximum interactivity
+            >can be composed into longer scripts saved in files and run from a terminal command prompt

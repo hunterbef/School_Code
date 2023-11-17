@@ -1,0 +1,72 @@
+10/09
+-------------
+Basic Elements of C++: Classes, Data Members and Member Functions
+    -C++ contains class and object declarations similar to Java
+    -data Members
+        *instance variables 
+    -member functions 
+        *methods 
+    -derived classes
+        *subclasses
+    -base classes 
+        *superclasses 
+    -objects in C++ are not automatically pointers or references
+    -three levels of protection for class Members
+        1. public members are accessible to client code and derived classes 
+            >public is not a global allocation
+        2. protected members are inaccessible to client code but are accessible to derived classes
+        3. private members are inaccessible to client and to derived classes 
+    -keywords private, public and protected establish blocks in class declarations, rather than apply only to individual member declarations
+    -Constructors   
+        *initialize objects as in java 
+            >can be called automatically as part of a declaration, as well as in a new expression
+    -Destructors
+        *called when an object is deallovated
+        *name is preceded with the tilde symbol
+        *required because there is no built in garbage collection in c++
+    -member functions can be implemented outside the declaration by using the scope reolution operator '::' after a class name
+    -member functions with implementations in a class are assumed to be inline
+        *compiler may replace the function call with the actual code for the function
+    -instance variables are initialized after a colon in a comma-separated list between the constructor declaration and body, w/ initial values in parentheses
+        *Complex(double r = 0, double i = 0) : re(r), im(i) {}
+    -Using a Template Class to Implement a Generic collection
+        *
+    -Static Binding, Dynamic Binding, and Virtual Functions
+        *dynamic binding of member functions is an option in C++, but not the default
+            >only functions defined with the keyword 'virtual' are candidates for dynamic binding
+        *pure virtual declaration
+            >a function declared with a 0 and the keyword 'virtual'
+                -ex:    virtual double area() = 0;  //pure virtual
+                -function is abstract and cannot be called
+                -renders the containing class abstract 
+                -must be overriden in a derived class 
+            >once a function is declared as virtual, it remains so in all derived classes in C++
+            >declaring a method as virtual is not sufficient to enable dynamic binding
+                -object must be either dynamically allocated or otherwise accessed through a reference
+        *C++ offers multiple inheritance using a comma-separated list of base cases 
+            >multiple inheritance ordinarily creates separate copies of each class on an inheritance path 
+            >to get a single copy of A in class D, must use the cirtual keyword, causing shared inheritance 
+                    class A {...};
+                    class B : virtual public A {...};
+                    class C : virtual public B;
+                    class D : virtual public C;
+    -Classes vs Types 
+        *classes must be incorporated in some way into the type system
+        *three possibilities
+            1. specifically exclude classes from type checking
+                >objects 
+    -Classes vs Modules
+        *classes provide a versatile mechanism for organizing code
+            >except in Java, classes do not allow the clean separation of implementation from interface and do not 
+                protect the implementation from exposure to client code
+        *classes are only marginally suited for controlling the importing and exporting of names in a fine-grained way
+            >C++ uses a namespace mechanism
+            >Java uses a package mechanism
+            >(these are used for grouping names)
+    -Inheritance vs Polymorphism
+        *four basic kinds of polymorphism 
+            >parametric polymorphism
+                -type parameters remain unspecified in declarations
+            >overloading
+                -different function or method declarations share the same name but have different types of parameters in each
+    

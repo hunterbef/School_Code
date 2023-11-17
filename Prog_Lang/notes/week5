@@ -1,0 +1,37 @@
+9/18
+---------------
+Chapter 3: Functional Programming
+---------------------------------
+Purity
+    -when functional programmers talk of purity, they are referring to pure functions
+    -pure functions are very simple functions, they only operate on their input parameters
+        javascript pure function
+            var z = 10;
+            function add(x,y)
+            {return x+y;}
+
+Background
+    -several different styles of Programming    
+        *functional Programming (math)
+            >provides a uniform view of programs as functions
+            >treats functions as data
+            >provides prevention of side effects
+            >generally have simpler semantics and a simpler model of computation
+                -useful for rapid prototyping, artificial intelligence, mathematical proof systems, and logic applications
+        *logic Programming (computer aided vwerification)
+        *object-oriented Programming (noun/verb)
+    -different languages have evolved to support each style of Programming
+        *each type of language rests on a distinct model of computation which is different from the von Neumann model
+    -despite these advantages, functional languages
+    -programs as functions
+        *a program is a description of specific computation
+        *if we ignore the how and focus on the result, or the what of the computation, the program becomes a virtual black box
+        *in mathematical terminology, the function can be written as y=f(x) or f:X->Y
+            >domain: of f: the set X
+            >range: of f: the set of Y
+            >independent variable: the x on f(x), representing any value from the set X
+            >dependent variable: the y from the set Y, defined by y = f(x)
+            >partial function: occurs when f is not defined for all x in X
+
+What is a Function
+    -m

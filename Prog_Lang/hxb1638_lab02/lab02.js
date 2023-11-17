@@ -1,0 +1,95 @@
+//  Hunter Befort
+//  1001181638
+//  10/04/2023
+
+//question 1
+//just creates the array inputtable and directly stores values into it
+const inputtable = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log("inputTable:\t[" + inputtable + "]\n");
+
+
+//question 2
+//takes inputtable, calls the map() function which creates a new array and modifies
+    //the inputtable array by multiplying each entry by 5 and storing it into the new array
+const fiveTable = inputtable.map(e => e * 5);
+console.log("fiveTable:\t[" + fiveTable + "]");
+//creates new array through map by taking inputtable and multiplying each entry by 13
+const thirteenTable = inputtable.map(e => e * 13);
+console.log("thirteenTable:\t[" + thirteenTable + "]");
+//creates new array through map by taking inputtable and multiplying each entry by itself
+const squaresTable = inputtable.map(e => e * e);
+console.log("squaresTable:\t[" + squaresTable + "]\n");
+
+
+//question 3
+//directly stores 20 entries from 0 to 100 on intervals of 5, then uses the filter() function
+    //to filter out all of the entries that are even by making sure the modulo returns 1 when divided by 2
+const fives = [0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100];
+const fiveOdds = fives.filter(e => (e % 2 === 1));
+console.log("fiveOdds:\t[" + fiveOdds + "]\n");
+
+
+//question 4
+//creates a new function that takes 4 parameters that includes the range of the function,
+    //the sum, and by what intervals the range will be traversed
+    //if the next entry would exceed the end of the range, it will return the sum given by the recursive functions
+    //if it is even, the function will recurse and add the current value into the sum, as well as adding the mult
+    //to the start value
+    //this function will only work for odd numbered mults
+function q4(start, end, sum, mult)
+{
+    if((start + mult) > end)
+    {
+        return sum;
+    }
+    if(start % 2 == 0)
+    {
+        start += (2 * mult);
+        return q4(start, end, sum + start, mult);
+    }
+    else
+    {
+        start += mult;
+        return q4(start, end, sum + start, mult)
+    }
+}
+const sumSevenEvens = q4(0, 100, 0, 7);
+console.log("sumSevenEvens:\t" + sumSevenEvens + "\n");
+
+
+//question 5
+//this function is curried, so it will take two separately declared variables, squaring the first one
+    //and multiplying the next one to the square and multiplying it all by pi (3.14) to get the volume of
+    //the cylinder with the given dimensions
+function cylinder_volume(rad)
+{
+    return function (height)
+    {
+        return 3.14 * rad * rad * height;
+    }
+}
+console.log("cylinder volume(r = 5, h = 10) : " + cylinder_volume(5)(10));
+console.log("cylinder volume(r = 5, h = 17) : " + cylinder_volume(5)(17));
+console.log("cylinder volume(r = 5, h = 11) : " + cylinder_volume(5)(11) + "\n");
+
+
+//question 6
+//this function creates an html tag, implementing a curried function that creates the tag by wrapping
+    //the table's tags with the two parameters it takes
+    //this tag includes the table, the table rows (tr), and the table descriptions (td) with my first name
+    //last nam, and age, then ending by wrapping
+makeTag = function(begin, end)
+{
+    return function(textcontent)
+    {
+        return begin + textcontent + end;
+    }
+}
+const table = makeTag("<table>\n", "</table>\n");
+const tr = makeTag("<tr>\n", "</tr>\n");
+const td = makeTag("<td>", "</td>\n");
+const html = table(tr(td("Hunter") + td("Befort") + td("25")));
+console.log("" + html);
+
+
+//question 7
